@@ -1,0 +1,11 @@
+Sviluppo di un sistema di consultazione delle proiezioni di un cinema che consenta di visualizzare le informazioni rigurdanti un film per ogni giorno disponibile.
+Per ogni film si possono visualizzare informazioni come:
+titolo, genere, trama, data, ora, durata, sala
+Un film puo essere proiettato più volte nello stesso giorno e in sale diverse.
+Ad ogni film può essere associato più di un genere.
+Verranno visualizzati soltanto risultati successivi all'orario e alla data di consultazione.
+
+
+https://wireframe.cc/oiBWcs
+
+
