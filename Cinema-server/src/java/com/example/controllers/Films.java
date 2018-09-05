@@ -35,9 +35,9 @@ public class Films extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/json;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            JSONObject obj = new JSONObject();
+            JSONObject rootObj = new JSONObject();
             /*
             obj.put("titolo","Mission Impossible");
             obj.put("genere","Azione, Thriller");
@@ -53,11 +53,28 @@ public class Films extends HttpServlet {
                     .setDurata("120''")
                     .setGenere("Azione, Thriller")
                     .build();
-            out.print(film+":<br>"+film.getTitolo()+" ("+film.getDurata()+") - "+film.getGenere()+" - "+film.getTrama());
+                films.add(film);
+                film = new Film.Builder()
+                        .setTitolo("Antman")
+                        .setDurata("90''")
+                        .build();
+                films.add(film);
+            //out.print(film+":<br>"+film.getTitolo()+" ("+film.getDurata()+") - "+film.getGenere()+" - "+film.getTrama());
             }
             catch (InvalidParameterException e){
                 response.setStatus(500);
             }
+            films.forEach(
+                    f -> {JSONObject obj = new JSONObject();
+                    obj.put("titolo", f.getTitolo());
+                    obj.put("Durata", f.getDurata());
+                    obj.put("Genere", f.getGenere());
+                    obj.put("Trama", f.getTrama());
+                    arr.put(obj);
+                    }
+            );
+            rootObj.put("films", arr);
+            out.print(rootObj);
         }
     }
 
