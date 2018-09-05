@@ -26,23 +26,14 @@ and open the template in the editor.
     float: left;
 }
 
-.film-info-right{
-    float: right;
-}
-
-.film-logo-cell, .film-info-cell{
+.film-card {
     display: table-cell;
 }
 
-.film-card {
-    display: table;
+.film-logo-cell{
+    float: left;
+    width: 20%;
 }
-
-.film-card-head, .film-card-body, .film-card-footer {
-    display: table-row;
-}
-
-
 .film-card-title {
     width: 100%;
 }

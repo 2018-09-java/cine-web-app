@@ -3,14 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example;
+package com.example.controllers;
 
+import com.example.models.Film;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -33,11 +38,26 @@ public class Films extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             JSONObject obj = new JSONObject();
+            /*
             obj.put("titolo","Mission Impossible");
             obj.put("genere","Azione, Thriller");
             obj.put("durata","120''");
             obj.put("trama","Blablablablablablablablablablablablabla");
-            out.print(obj); //sto inizializzando un oggetto json (in javascript è un oggetto valido)
+            */
+            //out.print("{}") ////sto inizializzando un oggetto json (in javascript è un oggetto valido)
+            JSONArray arr = new JSONArray();
+            List<Film> films = new ArrayList<>();
+            try {
+                Film film = new Film.Builder()
+                    .setTitolo("Mission Impossible")
+                    .setDurata("120''")
+                    .setGenere("Azione, Thriller")
+                    .build();
+            out.print(film+":<br>"+film.getTitolo()+" ("+film.getDurata()+") - "+film.getGenere()+" - "+film.getTrama());
+            }
+            catch (InvalidParameterException e){
+                response.setStatus(500);
+            }
         }
     }
 
