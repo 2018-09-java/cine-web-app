@@ -42,3 +42,7 @@ and open the template in the editor.
     display: table-row;
 }
 
+
+.film-card-title {
+    width: 100%;
+}
