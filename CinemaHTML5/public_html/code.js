@@ -27,7 +27,7 @@ var code = {
         {
             var htmlStr= `<div class="film-card">
                     <h2 class="film-title">`+ f.titolo +`</h2>
-                    <img class="film-logo" src="`+ f.locandina +`" alt="film-logo">
+                    <img class="film-logo" src="`+ f.urlLocandina +`" alt="film-logo">
                     <div class="film-info">
                         <span>Genere:</span>
                         <span>`+ f.genere +`</span>
