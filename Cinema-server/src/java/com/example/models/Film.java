@@ -17,6 +17,7 @@ public class Film {
     private String genere;
     private String durata;
     private String trama;
+    private String urlLocandina;
     
     private Film (){}
 
@@ -47,12 +48,20 @@ public class Film {
     public String getTrama() {
         return trama;
     }
+    
+    /**
+     * @return the urlLocandina
+     */
+    public String getUrlLocandina() {
+        return urlLocandina;
+    }
 
     public static class Builder {
         private String titolo = "Unknown";
         private String genere = "Unknown";
         private String durata = "Unknown";
         private String trama = "Unknown";
+        private String urlLocandina = "Unknown";
         
         public Builder setTitolo (String titolo){
             this.titolo = titolo;
@@ -70,6 +79,15 @@ public class Film {
             this.trama = trama;
             return this;
         }
+        
+        /**
+         * @param urlLocandina the urlLocandina to set
+         */
+        public Builder setUrlLocandina(String urlLocandina) {
+            this.urlLocandina = urlLocandina;
+            return this;
+        }
+        
         public Film build () {
             if((titolo.equals("Unknown") && 
                     !durata.equals("Unknown"))
@@ -82,6 +100,7 @@ public class Film {
             film.genere = this.genere;
             film.titolo = this.titolo;
             film.trama = this.trama;
+            film.urlLocandina = this.urlLocandina;
             return film;
         }
     }
