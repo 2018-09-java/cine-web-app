@@ -26,18 +26,18 @@ var code = {
         for(var f of filmList)
         {
             var htmlStr= `<div class="film-card">
-                    <h2 class="film-title">`+ f.titolo `</h2>
-                    <img class="film-logo" src="https://cdn1.thespacecinema.it/-/media/tsc/2018/06/6815missionimpossiblefallout/locandina2.jpg" alt="film-logo">
+                    <h2 class="film-title">`+ f.titolo +`</h2>
+                    <img class="film-logo" src="`+ f.locandina +`" alt="film-logo">
                     <div class="film-info">
                         <span>Genere:</span>
-                        <span>Azione - Thriller</span>
+                        <span>`+ f.genere +`</span>
                         <br>
                         <span>Durata:</span>
-                        <span>120''</span>
+                        <span>`+ f.durata +`</span>
                         <p class="film-trama">
                             <span>Trama:</span>
                             <br>                    
-                            <span>Dapprima a immortalare l'incidente è stata una clip clandestina su YouTube e quindi il video ufficiale dell'incidente, commentato dallo stesso Cruise e dal cast del film al Graham Norton Show. Al solito autoironico e sorridente, Cruise ha agevolato un fermo immagine che chiarisce la dinamica della frattura, annunciando baldanzosamente la continuazione delle riprese. Nonostante i due mesi di stop la data di uscita di Mission: Impossible - Fallout è rimasta fissata per il 27 luglio 2018. Al pari di Jackie Chan, Tom non molla, sceglie di girare le scene d'azione in prima persona, più forte anche del tempo che avanza. E anziché abbassare l'asticella, l'attore aumenta i rischi, con uno stunt - si dice - mai tentato prima d'ora.</span>
+                            <span>`+ f.trama +`</span>
                         </p>
                     </div>
                     <br>
