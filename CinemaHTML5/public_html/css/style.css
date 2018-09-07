@@ -38,6 +38,9 @@ and open the template in the editor.
     background-color: #adecad;
     max-width: 60%;
 }
+.film-card:hover {
+    background-color: #6fd06f;
+}
 
 .film-logo{
     float: left;
