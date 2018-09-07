@@ -35,7 +35,7 @@ public class Films extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/json;charset=UTF-8");
+        response.setContentType("application/json;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             JSONObject rootObj = new JSONObject();
             /*
@@ -67,9 +67,10 @@ public class Films extends HttpServlet {
             films.forEach(
                     f -> {JSONObject obj = new JSONObject();
                     obj.put("titolo", f.getTitolo());
-                    obj.put("Durata", f.getDurata());
-                    obj.put("Genere", f.getGenere());
-                    obj.put("Trama", f.getTrama());
+                    obj.put("durata", f.getDurata());
+                    obj.put("genere", f.getGenere());
+                    obj.put("trama", f.getTrama());
+                    //obj.put("locandina", f.getLocandina());
                     arr.put(obj);
                     }
             );
